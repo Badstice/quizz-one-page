@@ -1,0 +1,304 @@
+*{
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+    transition: 1s ease-out;
+    color: white;
+}
+
+html{
+    height: 99%;
+    width: 99%;
+}
+
+body{
+    position: fixed;
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    right: 0;
+    left: 0;
+    height: 100%;
+}
+
+/* NAV */
+
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+    background-color: blueviolet;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    padding: 26px;
+    z-index: 2;
+}
+
+nav[data-navstate="dev"]{
+    left: 0%;
+    right: 0%;
+}
+
+nav[data-navstate="red"]{
+    left : -100%;
+    right: 100%;
+}
+
+#devNav{
+    position: fixed;
+    cursor: pointer;
+    left: 0px;
+    top:0px;
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    z-index: 3;
+}
+
+#devNav[data-navstate="dev"]{
+    background-color: blueviolet;
+}
+
+#devNav[data-navstate="red"] {
+    background-color: rgba(138, 43, 226, 0);
+}
+
+.bar{
+    display: block;
+    width: 20px;
+    margin: 2px;
+    height: 3px;
+}
+
+#devNav[data-navstate="dev"] .bar{
+    background-color: black;
+}
+
+#devNav[data-navstate="red"] .bar{
+    background-color: blueviolet;
+}
+
+#devNav[data-navstate="dev"] #bar1{
+    transform: matrix(1, 1, 0, 1, 0, 3);
+}
+
+n#devNavav[data-navstate="red"] #bar1{
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#devNav[data-navstate="dev"] #bar2{
+    transform: matrix(1, -1, 0, 1, 0, 3);
+}
+
+#devNav[data-navstate="red"] #bar2{
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}
+#devNav[data-navstate="dev"] #bar3{
+    height: 0px;
+    width: 0px;
+    transform: matrix(1, 0, 0, 1, 10, -4);
+}
+
+#devNav[data-navstate="red"] #bar3{
+    height: 3px;
+}
+
+#categories, #difficulties{
+    width: 90%;
+    margin: 10px 0px;
+}
+
+/* data-selected */
+
+div[data-selected]{
+    user-select: none;
+    -moz-user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+    padding: 2px;
+    width: 100%;
+    border: 1px solid white;
+}
+
+div[data-selected] p{
+    text-align: center;
+}
+
+div[data-selected="false"]{
+    text-decoration: line-through;
+}
+
+
+
+
+/* QUIZZ */
+#score{
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    z-index: 1;
+}
+
+#time{
+    transition: all 1s;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 25px;
+    height: 25px;
+    margin: 10px 0px;
+    border-radius: 100%;
+}
+
+#time.up{
+    box-shadow: white 2px 2px 5px,
+    white -2px -2px 5px;
+}
+
+#time.down{
+    box-shadow: black 2px 2px 5px,
+    black -2px -2px 5px;
+}
+
+#time.hide{
+    height: 0px;
+}
+
+#question{
+    height: 25%;
+    width: 100%;
+    padding: 1%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.button{
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+}
+
+.button p{
+    padding: 0;
+    margin: 2%;
+    color: white;
+    user-select: unset;
+    text-align: center;
+}
+
+.show{
+    height: 100%;
+}
+.hide{
+    height: 0%;
+    overflow: hidden;
+    padding: 0;
+}
+
+#quizz{
+    width: 100%;
+    height: 100%;
+    max-height: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+}
+#quizz.show{
+    padding: 1%;
+}
+#grid-contener{
+    display: grid;
+    gap: 1%;
+    width: 95%;
+    height: 75%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-template-columns: 50% 50%;
+    gap: 1%;
+    background-color: black;
+}
+.button.rsp{
+    width: 100%;
+    height: 100%;
+}
+.bt1{background-color: #0000ff;}
+.bt2{background-color: #a52a2a;}
+.bt3{background-color: #d2691e;}
+.bt4{background-color: #663399;}
+[data-btn="1"]{
+    box-shadow: inset 5px 5px 15px white,
+    inset -5px -5px 15px white;
+}
+[data-btn="2"]{
+    box-shadow: inset 5px 5px 15px white,
+    inset -5px -5px 15px white;
+    background-color: green;
+}
+[data-btn="3"]{background-color: green;}
+[data-btn="4"]{
+    box-shadow: inset 5px 5px 15px white,
+    inset -5px -5px 15px white;
+    background-color: rgb(200, 0, 0);
+}
+[data-btn="5"]{background-color: gray;}
+[data-btn="1"],[data-btn="2"],[data-btn="3"],[data-btn="4"],[data-btn="5"]{
+    cursor: not-allowed;
+}
+
+
+#btnNext.show{
+    width: 80%;
+    height: 50px;
+    background-color: forestgreen;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+    #question{
+        font-size: 0.9em;
+        width: 98%;
+    }
+
+    #grid-contener{
+        display: grid;
+        gap: 0%;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-template-columns: 100%;
+    }
+
+    .button p{
+        padding: 10px;
+        font-size: 0.9em;
+    }
+  }

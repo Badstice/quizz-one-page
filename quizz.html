@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quizz one page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="quizz.css">
+    </head>
+    <body>
+        
+        <div id="devNav" data-navstate="red">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+        <nav data-navstate="red">
+            <div id="difficulties">
+                <div class="checkBtn" id="diff_easy" data-value="easy" data-selected="true">
+                    <p>Easy</p>
+                </div>
+                <div class="checkBtn" id="diff_medium" data-value="medium" data-selected="true">
+                    <p>Medium</p>
+                </div>
+                <div class="checkBtn" id="diff_hard" data-value="hard" data-selected="true">
+                    <p>Hard</p>
+                </div>
+            </div>
+
+            <div id="categories">
+
+            </div>
+
+            <div id="credits">
+                <a href="opentdb.com">Open TRIVIA DataBase</a>
+                <p>Author: Baptiste Dozias</p>
+            </div>
+        </nav>
+        
+        <div id="quizz">
+            <div id="score">
+                <p>Score : </p>
+                <p>0 pts</p>
+            </div>
+            <div id="time">Time</div>
+            <h1 id="question">question</h1>
+            <div id="grid-contener">
+                <div class="button rsp bt1" data-btn="" data-rsp=""><p></p></div>
+                <div class="button rsp bt2" data-btn="" data-rsp=""><p></p></div>
+                <div class="button rsp bt3" data-btn="" data-rsp=""><p></p></div>
+                <div class="button rsp bt4" data-btn="" data-rsp=""><p></p></div>
+            </div>
+            <div id="btnNext" class="show">
+                <p>Next question</p>
+            </div>
+        </div>
+        <script src="quizz.js"></script>
+    </body>
+</html>
